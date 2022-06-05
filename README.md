@@ -18,10 +18,8 @@ Aplicação criada para gerenciar o tempo de trabalho gasto em projetos pessoais
    - [📝 Licença](#LICENSE) -->
 
    - [📖 Sobre o App](#Sobre-o-App)
-   - [👨🏽‍💻 Desenvolvimento](#Sobre-o-desenvolvimento)
    - [🛠 Ferramentas](#Ferramentas-utilizadas)
-   - [📞 Contato](#-d%C3%BAvida-cr%C3%ADtica-elogio-ou-sugest%C3%A3o)
-   - [📝 Licença](#LICENSE)
+   - [📞 Contato](#d%C3%BAvida-cr%C3%ADtica-elogio-ou-sugest%C3%A3o)
 
    </p>
 
