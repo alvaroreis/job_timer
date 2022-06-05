@@ -28,7 +28,7 @@ Aplicação criada para gerenciar o tempo de trabalho gasto em projetos pessoais
 <h2>Sobre o App</h2>
 
 <p>
-📱 Um aplicativo rico em tecnologias para gerenciar melhor o tempo gasto.
+📱 Um aplicativo rico em tecnologias para gerenciar melhor o tempo gasto em projetos pessoais.
 </p>
 
 <!--
