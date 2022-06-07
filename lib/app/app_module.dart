@@ -6,6 +6,7 @@ import 'package:job_timer/app/services/auth/auth_service.dart';
 import 'package:job_timer/app/services/auth/auth_service_impl.dart';
 
 import 'modules/home/home_module.dart';
+import 'modules/project/project_module.dart';
 import 'modules/splash/splash_page.dart';
 
 class AppModule extends Module {
@@ -23,6 +24,6 @@ class AppModule extends Module {
         ),
         ModuleRoute(LoginModule.route, module: LoginModule()),
         ModuleRoute(HomeModule.route, module: HomeModule()),
-        // ModuleRoute(ProjectModule.route, module: ProjectModule()),
+        ModuleRoute(ProjectModule.route, module: ProjectModule()),
       ];
 }
