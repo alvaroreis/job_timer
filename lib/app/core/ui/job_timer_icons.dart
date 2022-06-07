@@ -11,7 +11,7 @@
 ///      fonts:
 ///       - asset: fonts/JobTimerIcons.ttf
 ///
-/// 
+///
 /// * Elusive, Copyright (C) 2013 by Aristeides Stathopoulos
 ///         Author:    Aristeides Stathopoulos
 ///         License:   SIL (http://scripts.sil.org/OFL)
@@ -29,6 +29,10 @@ class JobTimerIcons {
   static const _kFontFam = 'JobTimerIcons';
   static const String? _kFontPkg = null;
 
-  static const IconData ok_circled2_1 = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData angle_double_right = IconData(0xf101, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  // ignore: constant_identifier_names
+  static const IconData ok_circled2_1 =
+      IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  // ignore: constant_identifier_names
+  static const IconData angle_double_right =
+      IconData(0xf101, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
