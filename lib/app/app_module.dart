@@ -24,7 +24,7 @@ class AppModule extends Module {
           (i) => ProjectRepositoryImpl(database: i()),
         ),
         Bind.lazySingleton<ProjectService>(
-          (i) => ProjectServiceImpl(repository: i()),
+          (i) => ProjectServiceImpl(projectRepository: i()),
         ),
       ];
 
