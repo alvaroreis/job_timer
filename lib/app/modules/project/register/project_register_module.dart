@@ -1,17 +1,25 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:job_timer/app/modules/project/register/controller/project_register_controller.dart';
 import 'package:job_timer/app/modules/project/register/project_register_page.dart';
+import 'package:modular_bloc_bind/modular_bloc_bind.dart';
 
 class ProjectRegisterModule extends Module {
   static String route = '/register';
 
   @override
-  List<Bind> get binds => [];
+  List<Bind> get binds => [
+        BlocBind.lazySingleton(
+          (i) => ProjectRegisterController(projectService: i()), // appModule
+        ),
+      ];
 
   @override
   List<ModularRoute> get routes => [
         ChildRoute(
           ProjectRegisterPage.route,
-          child: (context, args) => const ProjectRegisterPage(),
+          child: (context, args) => ProjectRegisterPage(
+            controller: Modular.get(),
+          ),
         ),
       ];
 }
