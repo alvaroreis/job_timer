@@ -1,10 +1,10 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:job_timer/app/view_models/project_model.dart';
 
 import '../../../../entities/project_status.dart';
 import '../../../../services/project/project_service.dart';
+import '../../../../view_models/project_model.dart';
 
 part 'project_register_state.dart';
 
