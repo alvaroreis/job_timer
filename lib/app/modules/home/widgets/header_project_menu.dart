@@ -47,7 +47,7 @@ class HeaderProjectMenu extends SliverPersistentHeaderDelegate {
                 width: size.width * .45,
                 child: ElevatedButton.icon(
                     onPressed: () => Modular.to.pushNamed(
-                          ProjectRegisterPage.full_route,
+                          ProjectRegisterPage.fullRoute,
                         ),
                     icon: const Icon(Icons.add),
                     label: const Text('Novo Projeto')),
