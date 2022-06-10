@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:job_timer/app/services/auth/auth_service.dart';
 import 'package:job_timer/app/services/project/project_service.dart';
 
 import '../../../entities/project_status.dart';
@@ -11,8 +12,12 @@ part 'home_state.dart';
 
 class HomeController extends Cubit<HomeState> {
   final ProjectService _projectService;
-  HomeController({required ProjectService projectService})
-      : _projectService = projectService,
+  final AuthService _authService;
+  HomeController({
+    required ProjectService projectService,
+    required AuthService authService,
+  })  : _projectService = projectService,
+        _authService = authService,
         super(HomeState.initial());
 
   Future<void> findAll() async {
@@ -48,4 +53,8 @@ class HomeController extends Cubit<HomeState> {
   }
 
   void update() => filter(state.projectFilter);
+
+  Future<void> signOut() async {
+    await _authService.signOut();
+  }
 }

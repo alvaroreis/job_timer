@@ -21,10 +21,13 @@ class HomePage extends StatelessWidget {
         }
       },
       child: Scaffold(
-        drawer: const Drawer(
+        drawer: Drawer(
           child: SafeArea(
             child: ListTile(
-              title: Text('Sair'),
+              title: ElevatedButton(
+                onPressed: () async => await controller.signOut(),
+                child: const Text('Sair'),
+              ),
             ),
           ),
         ),
