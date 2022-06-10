@@ -23,6 +23,7 @@ class ProjectModel {
     project.taks.loadSync();
 
     return ProjectModel(
+      id: project.id,
       name: project.name,
       status: project.status,
       taks: project.taks.map(ProjectTaskModel.fromEntity).toList(),

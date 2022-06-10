@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:job_timer/app/entities/project_status.dart';
+import 'package:job_timer/app/modules/project/task/task_page.dart';
+import 'package:job_timer/app/view_models/project_model.dart';
+
+import '../controller/project_detail_controller.dart';
 
 class ProjectDetailAppbar extends SliverAppBar {
-  ProjectDetailAppbar({super.key})
+  final ProjectModel projectModel;
+  ProjectDetailAppbar({super.key, required this.projectModel})
       : super(
           expandedHeight: 100,
           toolbarHeight: 100,
           pinned: true,
-          title: const Text('Projeto X'),
+          title: Text(projectModel.name),
           centerTitle: true,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
@@ -32,24 +39,33 @@ class ProjectDetailAppbar extends SliverAppBar {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           RichText(
-                            text: const TextSpan(
+                            text: TextSpan(
                               children: [
                                 TextSpan(
-                                  text: '10',
-                                  style: TextStyle(
+                                  text: '${projectModel.taks.length}',
+                                  style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                TextSpan(text: '  '),
-                                TextSpan(
+                                const TextSpan(text: '  '),
+                                const TextSpan(
                                   text: 'tasks',
                                   style: TextStyle(color: Colors.black),
                                 ),
                               ],
                             ),
                           ),
-                          const _NewTasks(),
+                          Visibility(
+                              visible: projectModel.status !=
+                                  ProjectStatus.finalizado,
+                              replacement: const Text(
+                                'Projeto Finalizado',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              child: _NewTasks(projectModel: projectModel)),
                         ],
                       ),
                     ),
@@ -62,26 +78,33 @@ class ProjectDetailAppbar extends SliverAppBar {
 }
 
 class _NewTasks extends StatelessWidget {
-  const _NewTasks({Key? key}) : super(key: key);
+  final ProjectModel projectModel;
+  const _NewTasks({required this.projectModel});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          margin: const EdgeInsets.symmetric(vertical: 8),
-          child: CircleAvatar(
-            backgroundColor: Theme.of(context).primaryColor,
-            child: const Icon(
-              Icons.add,
-              size: 20,
-              color: Colors.white,
+    return InkWell(
+      onTap: () async {
+        await Modular.to.pushNamed(TaskPage.fullRoute, arguments: projectModel);
+        Modular.get<ProjectDetailController>().update();
+      },
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            child: CircleAvatar(
+              backgroundColor: Theme.of(context).primaryColor,
+              child: const Icon(
+                Icons.add,
+                size: 20,
+                color: Colors.white,
+              ),
             ),
           ),
-        ),
-        const Text('Adicionar Tasks')
-      ],
+          const Text('Adicionar Tasks')
+        ],
+      ),
     );
   }
 }
