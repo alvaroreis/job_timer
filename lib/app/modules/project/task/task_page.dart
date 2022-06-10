@@ -3,17 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:job_timer/app/core/ui/button_with_loader.dart';
-import 'package:job_timer/app/modules/project/task/task_module.dart';
 import 'package:validatorless/validatorless.dart';
 
 import '../../../core/ui/detail_appbar.dart';
-import '../project_module.dart';
 import 'controller/task_controller.dart';
 
 class TaskPage extends StatefulWidget {
-  static const String route = '/';
-  static String fullRoute = ProjectModule.route + TaskModule.route;
-
   final TaskController controller;
 
   const TaskPage({

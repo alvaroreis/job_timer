@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:job_timer/app/core/routes/app_routes.dart';
 import 'package:job_timer/app/entities/project_status.dart';
-import 'package:job_timer/app/modules/project/task/task_page.dart';
 import 'package:job_timer/app/view_models/project_model.dart';
 
 import '../controller/project_detail_controller.dart';
@@ -85,7 +85,10 @@ class _NewTasks extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () async {
-        await Modular.to.pushNamed(TaskPage.fullRoute, arguments: projectModel);
+        await Modular.to.pushNamed(
+          AppRoutes.project_task_page_route,
+          arguments: projectModel,
+        );
         Modular.get<ProjectDetailController>().update();
       },
       child: Row(

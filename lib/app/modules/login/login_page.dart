@@ -6,7 +6,6 @@ import 'package:job_timer/app/modules/login/controller/login_controller.dart';
 import '../../core/ui/images_ui.dart';
 
 class LoginPage extends StatelessWidget {
-  static const String route = '/';
   final LoginController controller;
 
   const LoginPage({

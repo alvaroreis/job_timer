@@ -4,17 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:job_timer/app/core/ui/job_timer_icons.dart';
 import 'package:job_timer/app/entities/project_status.dart';
 import 'package:job_timer/app/modules/project/detail/controller/project_detail_controller.dart';
-import 'package:job_timer/app/modules/project/detail/project_detail_module.dart';
 import 'package:job_timer/app/modules/project/detail/widgets/project_detail_appbar.dart';
 import 'package:job_timer/app/modules/project/detail/widgets/project_pie_chart.dart';
 import 'package:job_timer/app/modules/project/detail/widgets/project_task_tile.dart';
 import 'package:job_timer/app/view_models/project_model.dart';
 
-import '../project_module.dart';
-
 class ProjectDetailPage extends StatelessWidget {
-  static const String route = '/';
-  static String fullRoute = ProjectModule.route + ProjectDetailModule.route;
   final ProjectDetailController controller;
 
   const ProjectDetailPage({Key? key, required this.controller})

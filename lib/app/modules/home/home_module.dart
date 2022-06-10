@@ -5,8 +5,6 @@ import 'package:modular_bloc_bind/modular_bloc_bind.dart';
 import 'controller/home_controller.dart';
 
 class HomeModule extends Module {
-  static String route = '/home';
-
   @override
   List<Bind> get binds => [
         BlocBind.lazySingleton(
@@ -16,12 +14,8 @@ class HomeModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-        // ChildRoute(HomePage.route, child: (context, args) {
-        //   final controller = Modular.get<HomeController>()..findAll();
-        //   return HomePage(controller: controller);
-        // }),
         ChildRoute(
-          HomePage.route,
+          '/',
           child: (context, args) => HomePage(
             controller: Modular.get<HomeController>()..findAll(),
           ),
