@@ -46,4 +46,6 @@ class HomeController extends Cubit<HomeState> {
       ));
     }
   }
+
+  void update() => filter(state.projectFilter);
 }
