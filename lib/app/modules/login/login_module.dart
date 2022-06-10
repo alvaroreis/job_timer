@@ -4,7 +4,6 @@ import 'package:job_timer/app/modules/login/login_page.dart';
 import 'package:modular_bloc_bind/modular_bloc_bind.dart';
 
 class LoginModule extends Module {
-  static String route = '/login';
   @override
   List<Bind> get binds => [
         BlocBind.lazySingleton(
@@ -15,7 +14,7 @@ class LoginModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ChildRoute(
-          LoginPage.route,
+          '/',
           child: (context, args) => LoginPage(controller: Modular.get()),
         ),
       ];

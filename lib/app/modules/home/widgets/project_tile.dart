@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:job_timer/app/core/routes/app_routes.dart';
 import 'package:job_timer/app/core/ui/job_timer_icons.dart';
 import 'package:job_timer/app/modules/home/controller/home_controller.dart';
-import 'package:job_timer/app/modules/project/detail/project_detail_page.dart';
 import 'package:job_timer/app/view_models/project_model.dart';
 
 class ProjectTile extends StatelessWidget {
@@ -14,7 +14,7 @@ class ProjectTile extends StatelessWidget {
     return InkWell(
       onTap: () async {
         await Modular.to.pushNamed(
-          ProjectDetailPage.fullRoute,
+          AppRoutes.project_detail_page_route,
           arguments: projectModel,
         );
         Modular.get<HomeController>().update();

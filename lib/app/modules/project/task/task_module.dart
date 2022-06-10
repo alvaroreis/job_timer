@@ -6,8 +6,6 @@ import 'package:modular_bloc_bind/modular_bloc_bind.dart';
 import 'controller/task_controller.dart';
 
 class TaskModule extends Module {
-  static String route = '/task';
-
   @override
   List<Bind<Object>> get binds => [
         BlocBind.lazySingleton(
@@ -18,7 +16,7 @@ class TaskModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ChildRoute(
-          TaskPage.route,
+          '/',
           child: (context, args) => TaskPage(
             controller: Modular.get()..setProject(args.data as ProjectModel),
           ),

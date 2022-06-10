@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:job_timer/app/core/routes/app_routes.dart';
 import 'package:job_timer/app/entities/project_status.dart';
 import 'package:job_timer/app/modules/home/controller/home_controller.dart';
-import 'package:job_timer/app/modules/project/register/project_register_page.dart';
+
+import '../../../core/routes/app_routes.dart';
 
 class HeaderProjectMenu extends SliverPersistentHeaderDelegate {
   final HomeController controller;
@@ -62,7 +64,8 @@ class HeaderProjectMenu extends SliverPersistentHeaderDelegate {
                 height: constraints.maxHeight * .50,
                 child: ElevatedButton.icon(
                     onPressed: () async {
-                      await Modular.to.pushNamed(ProjectRegisterPage.fullRoute);
+                      await Modular.to
+                          .pushNamed(AppRoutes.project_register_page_route);
                       controller.findAll();
                     },
                     icon: const Icon(Icons.add),

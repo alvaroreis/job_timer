@@ -4,15 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:job_timer/app/core/ui/button_with_loader.dart';
 import 'package:job_timer/app/modules/project/register/controller/project_register_controller.dart';
-import 'package:job_timer/app/modules/project/register/project_register_module.dart';
 import 'package:validatorless/validatorless.dart';
 
 import '../../../core/ui/detail_appbar.dart';
-import '../project_module.dart';
 
 class ProjectRegisterPage extends StatefulWidget {
-  static const String route = '/';
-  static String fullRoute = ProjectModule.route + ProjectRegisterModule.route;
   final ProjectRegisterController controller;
 
   const ProjectRegisterPage({super.key, required this.controller});

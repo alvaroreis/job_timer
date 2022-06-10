@@ -8,7 +8,6 @@ import 'package:job_timer/app/view_models/project_model.dart';
 import 'controller/home_controller.dart';
 
 class HomePage extends StatelessWidget {
-  static String route = '/';
   final HomeController controller;
   const HomePage({super.key, required this.controller});
 

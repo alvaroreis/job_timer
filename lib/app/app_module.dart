@@ -1,6 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:job_timer/app/core/database/database.dart';
 import 'package:job_timer/app/core/database/database_impl.dart';
+import 'package:job_timer/app/core/routes/app_routes.dart';
 import 'package:job_timer/app/modules/login/login_module.dart';
 import 'package:job_timer/app/repositories/project/project_repository.dart';
 import 'package:job_timer/app/repositories/project/project_repository_impl.dart';
@@ -31,11 +32,11 @@ class AppModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ChildRoute(
-          SplashPage.route,
+          AppRoutes.splash_route,
           child: (context, args) => const SplashPage(),
         ),
-        ModuleRoute(LoginModule.route, module: LoginModule()),
-        ModuleRoute(HomeModule.route, module: HomeModule()),
-        ModuleRoute(ProjectModule.route, module: ProjectModule()),
+        ModuleRoute(AppRoutes.login_module_route, module: LoginModule()),
+        ModuleRoute(AppRoutes.home_module_route, module: HomeModule()),
+        ModuleRoute(AppRoutes.project_module_route, module: ProjectModule()),
       ];
 }

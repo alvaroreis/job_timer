@@ -1,12 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:job_timer/app/core/routes/app_routes.dart';
 import 'package:job_timer/app/core/ui/images_ui.dart';
-import 'package:job_timer/app/modules/home/home_module.dart';
-import 'package:job_timer/app/modules/login/login_module.dart';
 
 class SplashPage extends StatefulWidget {
-  static String route = '/';
   const SplashPage({Key? key}) : super(key: key);
 
   @override
@@ -20,9 +18,9 @@ class _SplashPageState extends State<SplashPage> {
 
     FirebaseAuth.instance.authStateChanges().listen((User? user) {
       if (null == user) {
-        Modular.to.navigate(LoginModule.route);
+        Modular.to.navigate(AppRoutes.login_module_route);
       } else {
-        Modular.to.navigate(HomeModule.route);
+        Modular.to.navigate(AppRoutes.home_module_route);
       }
     });
   }
