@@ -7,6 +7,7 @@ import 'package:job_timer/app/modules/project/register/controller/project_regist
 import 'package:job_timer/app/modules/project/register/project_register_module.dart';
 import 'package:validatorless/validatorless.dart';
 
+import '../../../core/ui/detail_appbar.dart';
 import '../project_module.dart';
 
 class ProjectRegisterPage extends StatefulWidget {
@@ -53,15 +54,9 @@ class _ProjectRegisterPageState extends State<ProjectRegisterPage> {
         }
       },
       child: Scaffold(
-        appBar: AppBar(
-          iconTheme: const IconThemeData(color: Colors.black),
-          elevation: 0,
+        appBar: DetailAppBar(
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          centerTitle: true,
-          title: const Text(
-            'Criar novo projeto',
-            style: TextStyle(color: Colors.black),
-          ),
+          title: 'Criar novo projeto',
         ),
         body: Form(
           key: _formKey,
