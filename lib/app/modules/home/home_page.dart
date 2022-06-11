@@ -1,5 +1,6 @@
 import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:job_timer/app/modules/home/widgets/header_project_menu.dart';
 import 'package:job_timer/app/modules/home/widgets/project_tile.dart';
@@ -38,6 +39,9 @@ class HomePage extends StatelessWidget {
               expandedHeight: 100,
               toolbarHeight: 100,
               centerTitle: true,
+              systemOverlayStyle: SystemUiOverlayStyle(
+                statusBarIconBrightness: Brightness.light,
+              ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.vertical(
                   bottom: Radius.circular(15),

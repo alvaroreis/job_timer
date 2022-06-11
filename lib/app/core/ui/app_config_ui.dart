@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AppConfigUI {
   AppConfigUI._();
@@ -21,6 +22,12 @@ class AppConfigUI {
     primaryColor: const Color(0XFF0066B0),
     primaryColorLight: const Color(0XFF219FFF),
     scaffoldBackgroundColor: Colors.white,
+    appBarTheme: const AppBarTheme(
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    ),
     inputDecorationTheme: const InputDecorationTheme(
       border: OutlineInputBorder(),
       enabledBorder: OutlineInputBorder(
